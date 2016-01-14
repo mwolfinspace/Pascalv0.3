@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Pascalv3</string>
+    <string name="bai_1">Câu lệnh If</string>
+    <string name="bai_2">Vòng lặp For</string>
+    <string name="bai_3">Vòng lặp While</string>
+    <string name="defaut2">Thêm tiêu đề</string>
+    <string name="defaut">Thêm nội dung</string>
+    <string name="tim_hieu">Tìm hiểu</string>
+    <string name="van_dung">Vận dụng</string>
+    <string name="title_activity_reading">ReadingActivity</string>
+    <string name="large_text">
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+    </string>
+    <string name="testcode">
+        "if a > b then\n"
+        "\t max:=a;"
+    </string>
+    <string name="testquestion">Câu 1: Nội dung câu hỏi ở đây?</string>
+    <string name="testans1">Chưa biết</string>
+    <string name="testans2">Chưa có</string>
+    <string name="testans3">Chưa thấy</string>
+    <string name="action_settings">Settings</string>
+    <string name="rds">Cover Image</string>
+</resources>

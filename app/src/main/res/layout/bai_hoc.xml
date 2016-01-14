@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tuabai"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/nen"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/bai1">
+
+        <LinearLayout
+            android:id="@+id/nutbam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#E0ECF8"
+            >
+            <Button
+                android:id="@+id/timhieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tim_hieu" />
+
+            <Button
+                android:id="@+id/vandung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/van_dung" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tenbai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/defaut"
+            android:layout_above="@id/nutbam"
+            android:layout_margin="8dp"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
