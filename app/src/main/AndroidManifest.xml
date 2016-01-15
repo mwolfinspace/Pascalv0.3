@@ -17,9 +17,19 @@
         </activity>
         <activity
             android:name=".bai1a"
-            android:label="@string/title_activity_reading"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".bai1b"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".bai1b" />
+
+        <activity
+            android:name=".bai2a"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".bai2b" />
+
+        <activity
+            android:name=".bai3a"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".bai3b" />
+
     </application>
 
 </manifest>

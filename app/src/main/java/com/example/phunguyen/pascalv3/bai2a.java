@@ -1,14 +1,8 @@
 package com.example.phunguyen.pascalv3;
 
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -18,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class bai1a extends AppCompatActivity {
-
+/**
+ * Tạo bởi phunguyen lúc 1/15/16.
+ */
+public class bai2a extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,18 +28,18 @@ public class bai1a extends AppCompatActivity {
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Tieu de
-        getSupportActionBar().setTitle(R.string.bai_1);
+        getSupportActionBar().setTitle(R.string.bai_2);
 
 
 
-        //Thay hinh nen tren dau
+        //Thay hinh nen tren dau 2
         ImageView hinhcover = (ImageView) findViewById(R.id.hinhcover);
         hinhcover.setImageResource(R.drawable.bai1);
 
         //Nhap xuat font
         Typeface codeFont = Typeface.createFromAsset(getAssets(), "fonts/SourceCodePro-Regular.ttf");
 
-        //Noi dung bai hoc 1
+        //Noi dung bai hoc 2
         //Tao khong gian
         LinearLayout noidungbai1 = (LinearLayout) findViewById(R.id.noidungbai);
         LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -90,5 +86,4 @@ public class bai1a extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

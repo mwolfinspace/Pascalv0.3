@@ -11,16 +11,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * Tạo bởi phunguyen lúc 1/14/16.
+ * Tạo bởi phunguyen lúc 1/15/16.
  */
-public class bai1b extends MainActivity {
+public class bai3b extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Thanh toolbar
         assert getSupportActionBar() != null;
-        getSupportActionBar().setTitle(R.string.bai_1);
+        getSupportActionBar().setTitle(R.string.bai_3);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

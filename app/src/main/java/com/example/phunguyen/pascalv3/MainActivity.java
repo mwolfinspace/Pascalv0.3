@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         assert getSupportActionBar() != null;
         getSupportActionBar().setTitle("Pascal v0.3");
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, bai1a.class);
                 //Goi bai hoc
                 startActivity(intent);
-                finish();
+
             }
         });
         //Chuyen sang bai tap 1
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, bai1b.class);
                 //Goi bai tap
                 startActivity(intent);
-                finish();
+
             }
         });
 
@@ -82,6 +83,28 @@ public class MainActivity extends AppCompatActivity {
 
         //Add view bai 2
         tuaBai.addView(bai2, tuabai);
+        //Chuyen sang bai hoc 2
+        baihoc2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, bai2a.class);
+                //Goi bai hoc
+                startActivity(intent);
+                assert getSupportActionBar() == null;
+
+            }
+        });
+        //Chuyen sang bai tap 2
+        baitap2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, bai2b.class);
+                //Goi bai tap
+                startActivity(intent);
+
+            }
+        });
+
 
         //Goi bai 3
         LinearLayout bai3 = (LinearLayout) View.inflate(this, R.layout.bai_hoc, null);
@@ -89,15 +112,34 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout nenbai3 = (RelativeLayout) bai3.findViewById(R.id.nen);
         TextView tenbai3 = (TextView) bai3.findViewById(R.id.tenbai);
 
-        tenbai2.setText(R.string.bai_3);
-        nenbai2.setBackgroundResource(R.drawable.bai1);
+        tenbai3.setText(R.string.bai_3);
+        nenbai3.setBackgroundResource(R.drawable.bai1);
         //Nhan nut bai 3
         Button baihoc3 = (Button) bai3.findViewById(R.id.timhieu);
         Button baitap3 = (Button) bai3.findViewById(R.id.vandung);
 
         //Add view bai 3
         tuaBai.addView(bai3, tuabai);
+        //Chuyen sang bai hoc 2
+        baihoc3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, bai3a.class);
+                //Goi bai hoc
+                startActivity(intent);
 
+            }
+        });
+        //Chuyen sang bai tap 2
+        baitap3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, bai2b.class);
+                //Goi bai tap
+                startActivity(intent);
+
+            }
+        });
 
     }
 
