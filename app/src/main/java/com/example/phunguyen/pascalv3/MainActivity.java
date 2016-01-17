@@ -1,10 +1,13 @@
 package com.example.phunguyen.pascalv3;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         assert getSupportActionBar() != null;
-        getSupportActionBar().setTitle("Pascal v0.3");
+        getSupportActionBar().setTitle("Pascal v0.3.0.1");
 
 
         //Tao khong gian
@@ -34,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         //Nhap xuat font
         Typeface codeFont = Typeface.createFromAsset(getAssets(), "fonts/SourceCodePro-Regular.ttf");
 
-        //Goi bai 1
-        LinearLayout bai1 = (LinearLayout) View.inflate(this, R.layout.bai_hoc, null);
+        /**
+         * Dựng khung bài 1
+         */
+        CardView bai1 = (CardView) View.inflate(this, R.layout.bai_hoc, null);
         //Chinh sua noi dung bai 1
         RelativeLayout nenbai1 = (RelativeLayout) bai1.findViewById(R.id.nen);
         TextView tenbai1 = (TextView) bai1.findViewById(R.id.tenbai);
@@ -69,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
         //Add view bai 1
         tuaBai.addView(bai1, tuabai);
 
-        //Goi bai 2
-        LinearLayout bai2 = (LinearLayout) View.inflate(this, R.layout.bai_hoc, null);
+        /**
+         * Dựng khung bài 2
+         */
+        CardView bai2 = (CardView) View.inflate(this, R.layout.bai_hoc, null);
         //Chinh sua noi dung bai 2
         RelativeLayout nenbai2 = (RelativeLayout) bai2.findViewById(R.id.nen);
         TextView tenbai2 = (TextView) bai2.findViewById(R.id.tenbai);
@@ -106,8 +113,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Goi bai 3
-        LinearLayout bai3 = (LinearLayout) View.inflate(this, R.layout.bai_hoc, null);
+        /**
+         * Dựng khung bài 3
+         */
+        CardView bai3 = (CardView) View.inflate(this, R.layout.bai_hoc, null);
         //Chinh sua noi dung bai 3
         RelativeLayout nenbai3 = (RelativeLayout) bai3.findViewById(R.id.nen);
         TextView tenbai3 = (TextView) bai3.findViewById(R.id.tenbai);
@@ -134,13 +143,40 @@ public class MainActivity extends AppCompatActivity {
         baitap3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai2b.class);
+                Intent intent = new Intent(MainActivity.this, bai3b.class);
                 //Goi bai tap
                 startActivity(intent);
 
             }
         });
 
+    }
+
+    /**
+     * Thoát ứng dụng
+     */
+    private void doExit() {
+
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+
+        alertDialog.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        alertDialog.setNegativeButton("Hủy bỏ", null);
+
+        alertDialog.setMessage("Bạn muốn đóng ứng dụng?");
+        alertDialog.setTitle("Pascal v0.3.0.1");
+        alertDialog.show();
+    }
+    @Override
+    public void onBackPressed() {
+
+        doExit();
     }
 
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,7 +46,7 @@ public class bai2a extends AppCompatActivity {
         LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         tuabai.setMargins(0, 0, 0, 8);
         //Them thu noi dung chu
-        LinearLayout khungbai1 = (LinearLayout) View.inflate(this, R.layout.khung_chua_bai, null);
+        CardView khungbai1 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
         TextView noidung1 = (TextView) khungbai1.findViewById(R.id.noidung);
         noidung1.setText(R.string.large_text);
         //Add noi dung vao khung
@@ -55,7 +56,7 @@ public class bai2a extends AppCompatActivity {
 
         //Noi dung phan code
         //Them thu noi dung code
-        LinearLayout khungbai2 = (LinearLayout) View.inflate(this, R.layout.khung_chua_bai, null);
+        CardView khungbai2 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
         TextView noidung2 = (TextView) khungbai2.findViewById(R.id.noidung);
         noidung2.setText(R.string.testcode);
         noidung2.setTypeface(codeFont);

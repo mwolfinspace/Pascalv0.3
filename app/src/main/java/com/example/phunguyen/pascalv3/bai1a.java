@@ -10,6 +10,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class bai1a extends AppCompatActivity {
 
@@ -36,6 +39,7 @@ public class bai1a extends AppCompatActivity {
 
 
 
+
         //Thay hinh nen tren dau
         ImageView hinhcover = (ImageView) findViewById(R.id.hinhcover);
         hinhcover.setImageResource(R.drawable.bai1);
@@ -48,10 +52,15 @@ public class bai1a extends AppCompatActivity {
         LinearLayout noidungbai1 = (LinearLayout) findViewById(R.id.noidungbai);
         LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         tuabai.setMargins(0, 0, 0, 8);
+        LinearLayout.LayoutParams noidung = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        noidung.setMargins(8, 0, 8, 8);
+
         //Them thu noi dung chu
-        LinearLayout khungbai1 = (LinearLayout) View.inflate(this, R.layout.khung_chua_bai, null);
+        CardView khungbai1 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
         TextView noidung1 = (TextView) khungbai1.findViewById(R.id.noidung);
-        noidung1.setText(R.string.large_text);
+        TextView tieude1 = (TextView) khungbai1.findViewById(R.id.tieude);
+        tieude1.setText(R.string.datdiem);
+        noidung1.setText(R.string.bai1_gioithieu);
         //Add noi dung vao khung
         noidungbai1.addView(khungbai1, tuabai);
 
@@ -59,11 +68,32 @@ public class bai1a extends AppCompatActivity {
 
         //Noi dung phan code
         //Them thu noi dung code
-        LinearLayout khungbai2 = (LinearLayout) View.inflate(this, R.layout.khung_chua_bai, null);
+        CardView khungbai2 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
         TextView noidung2 = (TextView) khungbai2.findViewById(R.id.noidung);
-        noidung2.setText(R.string.testcode);
+        TextView tieude2 = (TextView) khungbai2.findViewById(R.id.tieude);
+        LinearLayout khungchuabai2 = (LinearLayout) khungbai2.findViewById(R.id.khungchuabai);
+
+        TextView noidung2b = new TextView(this);
+        noidung2b.setText(R.string.trongdoif);
+        noidung2b.setTextSize(20);
+        noidung2b.setLayoutParams(noidung);
+        khungchuabai2.addView(noidung2b);
+
+        tieude2.setText(R.string.ifthen);
+        noidung2.setText(R.string.ifthenma);
         noidung2.setTypeface(codeFont);
         noidungbai1.addView(khungbai2, tuabai);
+
+
+
+
+        //Noi dung phan giai thich
+        CardView khungbai3 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
+        TextView tieude3 = (TextView) khungbai3.findViewById(R.id.tieude);
+        //TextView noidung3 = (TextView) khungbai3.findViewById(R.id.noidung);
+        //tieude3.setText(R.string.trongdo);
+
+
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
