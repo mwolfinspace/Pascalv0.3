@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -173,10 +174,15 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setTitle("Pascal v0.3.0.1");
         alertDialog.show();
     }
-    @Override
-    public void onBackPressed() {
 
-        doExit();
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            doExit();
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
 }

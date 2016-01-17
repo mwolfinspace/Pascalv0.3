@@ -3,6 +3,7 @@ package com.example.phunguyen.pascalv3;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 /**
  * Tạo bởi phunguyen lúc 1/14/16.
  */
-public class bai1b extends MainActivity {
+public class bai1b extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
