@@ -1,18 +1,15 @@
 package com.example.phunguyen.pascalv3;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,127 +25,100 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Pascal v0.3.0.1");
 
 
-        //Tao khong gian
+        //Tạo không gian
         LinearLayout tuaBai = (LinearLayout) findViewById(R.id.noi_dung_chinh);
-        LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tuabai.setMargins(0, 0, 0, 8);
-        LinearLayout.LayoutParams dapan = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dapan.setMargins(8, 8, 8, 8);
+        LinearLayout.LayoutParams tuaBai1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tuaBai1.setMargins(0, 0, 0, 8);
+        LinearLayout.LayoutParams dapAn = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dapAn.setMargins(8, 8, 8, 8);
 
-        //Nhap xuat font
-        Typeface codeFont = Typeface.createFromAsset(getAssets(), "fonts/SourceCodePro-Regular.ttf");
+        //Nhập xuất font
+        Typeface.createFromAsset(getAssets(), "fonts/SourceCodePro-Regular.ttf");
 
-        /**
-         * Dựng khung bài 1
-         */
         CardView bai1 = (CardView) View.inflate(this, R.layout.bai_hoc, null);
-        //Chinh sua noi dung bai 1
-        RelativeLayout nenbai1 = (RelativeLayout) bai1.findViewById(R.id.nen);
-        TextView tenbai1 = (TextView) bai1.findViewById(R.id.tenbai);
+        //Chỉnh sửa nội dung bài 1
+        RelativeLayout nenBai1 = (RelativeLayout) bai1.findViewById(R.id.nen);
+        TextView tenBai1 = (TextView) bai1.findViewById(R.id.tenbai);
 
-        tenbai1.setText(R.string.bai_1);
-        nenbai1.setBackgroundResource(R.drawable.bai1);
-        //Nhan nut bai 1
-        Button baihoc1 = (Button) bai1.findViewById(R.id.timhieu);
-        Button baitap1 = (Button) bai1.findViewById(R.id.vandung);
-        //Chuyen sang bai hoc 1
-        baihoc1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai1a.class);
-                //Goi bai hoc
-                startActivity(intent);
+        tenBai1.setText(R.string.bai_1);
+        nenBai1.setBackgroundResource(R.drawable.bai1);
+        //Nhấn nút bài 1
+        Button baiHoc1 = (Button) bai1.findViewById(R.id.timhieu);
+        Button baiTap1 = (Button) bai1.findViewById(R.id.vandung);
+        //Chuyển sang bài học 1
+        baiHoc1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, bai1a.class);
+            //Gọi bài học
+            startActivity(intent);
 
-            }
         });
-        //Chuyen sang bai tap 1
-        baitap1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai1b.class);
-                //Goi bai tap
-                startActivity(intent);
+        //Chuyển sang bài tập 1
+        baiTap1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, bai1b.class);
+            //Gọi bài tập
+            startActivity(intent);
 
-            }
         });
 
-        //Add view bai 1
-        tuaBai.addView(bai1, tuabai);
+        //Thêm view bài 1
+        tuaBai.addView(bai1, tuaBai1);
 
-        /**
-         * Dựng khung bài 2
-         */
         CardView bai2 = (CardView) View.inflate(this, R.layout.bai_hoc, null);
-        //Chinh sua noi dung bai 2
-        RelativeLayout nenbai2 = (RelativeLayout) bai2.findViewById(R.id.nen);
-        TextView tenbai2 = (TextView) bai2.findViewById(R.id.tenbai);
+        //Chỉnh sửa nội dung bài 2
+        RelativeLayout nenBai2 = (RelativeLayout) bai2.findViewById(R.id.nen);
+        TextView tenBai2 = (TextView) bai2.findViewById(R.id.tenbai);
 
-        tenbai2.setText(R.string.bai_2);
-        nenbai2.setBackgroundResource(R.drawable.bai1);
-        //Nhan nut bai 2
-        Button baihoc2 = (Button) bai2.findViewById(R.id.timhieu);
-        Button baitap2 = (Button) bai2.findViewById(R.id.vandung);
+        tenBai2.setText(R.string.bai_2);
+        nenBai2.setBackgroundResource(R.drawable.bai1);
+        //Nhấn nút bài 2
+        Button baiHoc2 = (Button) bai2.findViewById(R.id.timhieu);
+        Button baiTap2 = (Button) bai2.findViewById(R.id.vandung);
 
-        //Add view bai 2
-        tuaBai.addView(bai2, tuabai);
-        //Chuyen sang bai hoc 2
-        baihoc2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai2a.class);
-                //Goi bai hoc
-                startActivity(intent);
-                assert getSupportActionBar() == null;
+        //Thêm view bài 2
+        tuaBai.addView(bai2, tuaBai1);
+        //Chuyển sang bài học 2
+        baiHoc2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, bai2a.class);
+            //Gọi bài học
+            startActivity(intent);
+            //assert getSupportActionBar() == null;
 
-            }
         });
-        //Chuyen sang bai tap 2
-        baitap2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai2b.class);
-                //Goi bai tap
-                startActivity(intent);
+        //Chuyển sang bài tập 2
+        baiTap2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, bai2b.class);
+            //Gọi bài tập
+            startActivity(intent);
 
-            }
         });
 
 
-        /**
-         * Dựng khung bài 3
-         */
         CardView bai3 = (CardView) View.inflate(this, R.layout.bai_hoc, null);
-        //Chinh sua noi dung bai 3
-        RelativeLayout nenbai3 = (RelativeLayout) bai3.findViewById(R.id.nen);
-        TextView tenbai3 = (TextView) bai3.findViewById(R.id.tenbai);
+        //Chỉnh sửa nội dung bài 3
+        RelativeLayout nenBai3 = (RelativeLayout) bai3.findViewById(R.id.nen);
+        TextView tenBai3 = (TextView) bai3.findViewById(R.id.tenbai);
 
-        tenbai3.setText(R.string.bai_3);
-        nenbai3.setBackgroundResource(R.drawable.bai1);
-        //Nhan nut bai 3
-        Button baihoc3 = (Button) bai3.findViewById(R.id.timhieu);
-        Button baitap3 = (Button) bai3.findViewById(R.id.vandung);
+        tenBai3.setText(R.string.bai_3);
+        nenBai3.setBackgroundResource(R.drawable.bai1);
+        //Nhấn nút bài 3
+        Button baiHoc3 = (Button) bai3.findViewById(R.id.timhieu);
+        Button baiTap3 = (Button) bai3.findViewById(R.id.vandung);
 
-        //Add view bai 3
-        tuaBai.addView(bai3, tuabai);
-        //Chuyen sang bai hoc 2
-        baihoc3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai3a.class);
-                //Goi bai hoc
-                startActivity(intent);
+        //Thêm view bài 3
+        tuaBai.addView(bai3, tuaBai1);
+        //Chuyển sang bài học 3
+        baiHoc3.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, bai3a.class);
+            //Gọi bài học
+            startActivity(intent);
 
-            }
         });
-        //Chuyen sang bai tap 2
-        baitap3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, bai3b.class);
-                //Goi bai tap
-                startActivity(intent);
+        //Chuyển sang bài tập 3
+        baiTap3.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, bai3b.class);
+            //Gọi bài tập
+            startActivity(intent);
 
-            }
         });
 
     }
@@ -160,13 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
 
-        alertDialog.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
+        alertDialog.setPositiveButton("Đồng ý", (dialog, which) -> finish());
 
         alertDialog.setNegativeButton("Hủy bỏ", null);
 

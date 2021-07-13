@@ -25,44 +25,41 @@ public class bai1b extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        //Hien thi noi dung cau hoi
+        //Hiện nội dung câu hỏi
 
-        //Tao khong gian
+        //Tạo không gian
         LinearLayout tuaBai = (LinearLayout) findViewById(R.id.noi_dung_chinh);
-        LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tuabai.setMargins(0, 0, 0, 8);
-        LinearLayout.LayoutParams dapan = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dapan.setMargins(8, 8, 8, 8);
+        LinearLayout.LayoutParams tuaBai1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tuaBai1.setMargins(0, 0, 0, 8);
+        LinearLayout.LayoutParams dapAn = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dapAn.setMargins(8, 8, 8, 8);
 
-        //Goi mau cau hoi trac nghiem
-        LinearLayout khungcauhoi1 = (LinearLayout) View.inflate(this, R.layout.khung_cau_hoi, null);
+        //Gọi mẫu câu hỏi trắc nghiệm
+        LinearLayout khungCauHoi1 = (LinearLayout) View.inflate(this, R.layout.khung_cau_hoi, null);
         //Thay doi noi dung cau hoi
-        final ImageView nhanxet = (ImageView) khungcauhoi1.findViewById(R.id.check);
-        tuaBai.addView(khungcauhoi1,tuabai);
+        final ImageView nhanXet = (ImageView) khungCauHoi1.findViewById(R.id.check);
+        tuaBai.addView(khungCauHoi1,tuaBai1);
         //Tao dap an
-        final int dab1[] = {0};
-        final String[] dapanCau1 = {getString(R.string.testans1), getString(R.string.testans2), getString(R.string.testans3)};
-        for (int i = 0; i < dapanCau1.length; i++) {
+        final int[] dab1 = {0};
+        final String[] dapAnCau1 = {getString(R.string.testans1), getString(R.string.testans2), getString(R.string.testans3)};
+        for (int i = 0; i < dapAnCau1.length; i++) {
             final LinearLayout pa = new LinearLayout(this);
             TextView textView = new TextView(this);
             pa.setBackgroundColor(Color.parseColor("#dddddd"));
-            textView.setText(dapanCau1[i]);
+            textView.setText(dapAnCau1[i]);
             textView.setTextSize(18);
             pa.setId(i);
-            pa.addView(textView, dapan);
-            khungcauhoi1.addView(pa);
+            pa.addView(textView, dapAn);
+            khungCauHoi1.addView(pa);
 
             //Check dap an
-            pa.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (dab1[0] == pa.getId()) {
-                        pa.setBackgroundColor(Color.parseColor("#00ff7f"));
-                        nhanxet.setImageResource(R.mipmap.right);
-                    } else {
-                        pa.setBackgroundColor(Color.parseColor("#ff6666"));
-                        nhanxet.setImageResource(R.mipmap.wrong);
-                    }
+            pa.setOnClickListener(v -> {
+                if (dab1[0] == pa.getId()) {
+                    pa.setBackgroundColor(Color.parseColor("#00ff7f"));
+                    nhanXet.setImageResource(R.mipmap.right);
+                } else {
+                    pa.setBackgroundColor(Color.parseColor("#ff6666"));
+                    nhanXet.setImageResource(R.mipmap.wrong);
                 }
             });
         }
@@ -74,16 +71,13 @@ public class bai1b extends AppCompatActivity {
     //Quan ly nut Back
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // app icon in action bar clicked; go home
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {// app icon in action bar clicked; go home
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

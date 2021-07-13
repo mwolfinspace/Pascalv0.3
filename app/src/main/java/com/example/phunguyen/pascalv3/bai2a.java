@@ -13,54 +13,52 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Tạo bởi phunguyen lúc 1/15/16.
- */
 public class bai2a extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading);
 
-        //Khoi tao va thiet lap toolbar
+        //Khởi tạo và thiết lập Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //Nut tren thanh
+        //Nút trên thanh
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //Tieu de
+        //Tiêu đề
         getSupportActionBar().setTitle(R.string.bai_2);
 
 
 
-        //Thay hinh nen tren dau 2
-        ImageView hinhcover = (ImageView) findViewById(R.id.hinhcover);
-        hinhcover.setImageResource(R.drawable.bai1);
+        //Thay hình nền trên đầu 2
+        ImageView hinhCover = (ImageView) findViewById(R.id.hinhCover);
+        hinhCover.setImageResource(R.drawable.bai1);
 
-        //Nhap xuat font
+        //Nhập xuất font
         Typeface codeFont = Typeface.createFromAsset(getAssets(), "fonts/SourceCodePro-Regular.ttf");
 
-        //Noi dung bai hoc 2
-        //Tao khong gian
-        LinearLayout noidungbai1 = (LinearLayout) findViewById(R.id.noidungbai);
-        LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tuabai.setMargins(0, 0, 0, 8);
+        //Nội dung bài học 2
+        //Tạo không gian
+        LinearLayout noiDungBai2 = (LinearLayout) findViewById(R.id.noidungbai);
+        LinearLayout.LayoutParams tuaBai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tuaBai.setMargins(0, 0, 0, 8);
         //Them thu noi dung chu
-        CardView khungbai1 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
-        TextView noidung1 = (TextView) khungbai1.findViewById(R.id.noidung);
-        noidung1.setText(R.string.large_text);
-        //Add noi dung vao khung
-        noidungbai1.addView(khungbai1, tuabai);
+        CardView khungBai2 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
+        TextView noiDung2 = (TextView) khungBai2.findViewById(R.id.noidung);
+        noiDung2.setText(R.string.large_text);
+        //Thêm nội dung vào khung
+        noiDungBai2.addView(khungBai2, tuaBai);
 
 
 
-        //Noi dung phan code
-        //Them thu noi dung code
-        CardView khungbai2 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
-        TextView noidung2 = (TextView) khungbai2.findViewById(R.id.noidung);
-        noidung2.setText(R.string.testcode);
-        noidung2.setTypeface(codeFont);
-        noidungbai1.addView(khungbai2, tuabai);
+        //Nội dung phần code
+        //Thêm thử nội dung code
+        CardView khungBai2A = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
+        TextView noiDung2A = (TextView) khungBai2A.findViewById(R.id.noidung);
+        noiDung2A.setText(R.string.testcode);
+        noiDung2A.setTypeface(codeFont);
+        noiDungBai2.addView(khungBai2A, tuaBai);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -75,16 +73,13 @@ public class bai2a extends AppCompatActivity {
     //Quan ly nut Back
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // app icon in action bar clicked; go home
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {// app icon in action bar clicked; go home
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

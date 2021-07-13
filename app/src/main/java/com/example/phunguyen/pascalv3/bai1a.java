@@ -1,14 +1,8 @@
 package com.example.phunguyen.pascalv3;
 
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -19,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class bai1a extends AppCompatActivity {
 
     @Override
@@ -28,70 +20,69 @@ public class bai1a extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading);
 
-        //Khoi tao va thiet lap toolbar
+        //Khởi tạo và thiết lập Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //Nut tren thanh
+        //Nút trên thanh
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //Tieu de
+        //Tiêu đề
         getSupportActionBar().setTitle(R.string.bai_1);
 
 
 
+        //Nút trên thanh
+        ImageView hinh_cover = (ImageView) findViewById(R.id.hinhCover);
+        hinh_cover.setImageResource(R.drawable.bai1);
 
-        //Thay hinh nen tren dau
-        ImageView hinhcover = (ImageView) findViewById(R.id.hinhcover);
-        hinhcover.setImageResource(R.drawable.bai1);
-
-        //Nhap xuat font
+        //Nhập xuất Font
         Typeface codeFont = Typeface.createFromAsset(getAssets(), "fonts/SourceCodePro-Regular.ttf");
 
-        //Noi dung bai hoc 1
-        //Tao khong gian
-        LinearLayout noidungbai1 = (LinearLayout) findViewById(R.id.noidungbai);
-        LinearLayout.LayoutParams tuabai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tuabai.setMargins(0, 0, 0, 8);
-        LinearLayout.LayoutParams noidung = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        noidung.setMargins(8, 0, 8, 8);
+        //Nội dung bài học 1
+        //Tạo không gian
+        LinearLayout noiDungBai1 = (LinearLayout) findViewById(R.id.noidungbai);
+        LinearLayout.LayoutParams tuaBai = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tuaBai.setMargins(0, 0, 0, 8);
+        LinearLayout.LayoutParams noiDung = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        noiDung.setMargins(8, 0, 8, 8);
 
         //Them thu noi dung chu
-        CardView khungbai1 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
-        TextView noidung1 = (TextView) khungbai1.findViewById(R.id.noidung);
-        TextView tieude1 = (TextView) khungbai1.findViewById(R.id.tieude);
-        tieude1.setText(R.string.datdiem);
-        noidung1.setText(R.string.bai1_gioithieu);
-        //Add noi dung vao khung
-        noidungbai1.addView(khungbai1, tuabai);
+        CardView khungBai1 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
+        TextView noiDung1 = (TextView) khungBai1.findViewById(R.id.noidung);
+        TextView tieuDe1 = (TextView) khungBai1.findViewById(R.id.tieude);
+        tieuDe1.setText(R.string.datdiem);
+        noiDung1.setText(R.string.bai1_gioithieu);
+        //Thêm nội dung vào khung
+        noiDungBai1.addView(khungBai1, tuaBai);
 
 
 
-        //Noi dung phan code
-        //Them thu noi dung code
-        CardView khungbai2 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
-        TextView noidung2 = (TextView) khungbai2.findViewById(R.id.noidung);
-        TextView tieude2 = (TextView) khungbai2.findViewById(R.id.tieude);
-        LinearLayout khungchuabai2 = (LinearLayout) khungbai2.findViewById(R.id.khungchuabai);
+        //Nội dung phần code
+        //Thêm thử nội dung code
+        CardView khungBai2 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
+        TextView noiDung2 = (TextView) khungBai2.findViewById(R.id.noidung);
+        TextView tieuDe2 = (TextView) khungBai2.findViewById(R.id.tieude);
+        LinearLayout khungChuaBai2 = (LinearLayout) khungBai2.findViewById(R.id.khungchuabai);
 
-        TextView noidung2b = new TextView(this);
-        noidung2b.setText(R.string.trongdoif);
-        noidung2b.setTextSize(20);
-        noidung2b.setLayoutParams(noidung);
-        khungchuabai2.addView(noidung2b);
+        TextView noiDung2B = new TextView(this);
+        noiDung2B.setText(R.string.trongdoif);
+        noiDung2B.setTextSize(20);
+        noiDung2B.setLayoutParams(noiDung);
+        khungChuaBai2.addView(noiDung2B);
 
-        tieude2.setText(R.string.ifthen);
-        noidung2.setText(R.string.ifthenma);
-        noidung2.setTypeface(codeFont);
-        noidungbai1.addView(khungbai2, tuabai);
-
-
+        tieuDe2.setText(R.string.ifthen);
+        noiDung2.setText(R.string.ifthenma);
+        noiDung2.setTypeface(codeFont);
+        noiDungBai1.addView(khungBai2, tuaBai);
 
 
-        //Noi dung phan giai thich
-        CardView khungbai3 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
-        TextView tieude3 = (TextView) khungbai3.findViewById(R.id.tieude);
-        //TextView noidung3 = (TextView) khungbai3.findViewById(R.id.noidung);
-        //tieude3.setText(R.string.trongdo);
+
+
+        //Nội dung phần giải thích
+        CardView khungBai3 = (CardView) View.inflate(this, R.layout.khung_chua_bai, null);
+        khungBai3.findViewById(R.id.tieude);
+        //TextView noiDung3 = (TextView) khungBai3.findViewById(R.id.noiDung);
+        //tieuDe3.setText(R.string.trongDo);
 
 
 
@@ -108,17 +99,14 @@ public class bai1a extends AppCompatActivity {
     //Quan ly nut Back
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // app icon in action bar clicked; go home
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {// app icon in action bar clicked; go home
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 }
