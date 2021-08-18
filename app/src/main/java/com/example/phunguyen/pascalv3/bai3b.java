@@ -68,7 +68,7 @@ public class bai3b extends AppCompatActivity {
 
     }
 
-    //Quan ly nut Back
+    //Quản lý nút Back
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {// app icon in action bar clicked; go home

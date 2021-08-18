@@ -1,18 +1,18 @@
 package com.example.phunguyen.pascalv3;
 
-import android.app.AlertDialog;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -126,27 +126,22 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Thoát ứng dụng
      */
-    private void doExit() {
+    private Toast toast;
+    private long lastBackPressTime = 0;
 
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-
-        alertDialog.setPositiveButton("Đồng ý", (dialog, which) -> finish());
-
-        alertDialog.setNegativeButton("Hủy bỏ", null);
-
-        alertDialog.setMessage("Bạn muốn đóng ứng dụng?");
-        alertDialog.setTitle("Pascal v0.3.0.1");
-        alertDialog.show();
-    }
-
+    @SuppressLint("ShowToast")
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if(keyCode == KeyEvent.KEYCODE_BACK) {
-            doExit();
+    public void onBackPressed() {
+        if (this.lastBackPressTime < System.currentTimeMillis() - 3000) {
+            toast = Toast.makeText(this, "Nhấn quay lại lần nữa để thoát", 3000);
+            toast.show();
+            this.lastBackPressTime = System.currentTimeMillis();
+        } else {
+            if (toast != null) {
+                toast.cancel();
+            }
+            super.onBackPressed();
         }
-
-        return super.onKeyDown(keyCode, event);
     }
 
 }

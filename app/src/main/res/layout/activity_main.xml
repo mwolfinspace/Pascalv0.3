@@ -15,11 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
-        >
+        tools:ignore="SpeakableTextPresentCheck">
+
         <LinearLayout
+            android:id="@+id/noi_dung_chinh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/noi_dung_chinh"
             android:orientation="vertical">
 
         </LinearLayout>
